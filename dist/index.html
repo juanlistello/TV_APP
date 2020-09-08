@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+
+    <title>Movie Guide</title>
+  </head>
+  <body>
+    <!-- Header and Navbar -->
+    <header id="header">
+      <nav class="navbar">
+        <div class="left-navbar">
+          <div class="logo">
+            <a href="#/home">
+              <h1>movie guide</h1>
+            </a>
+          </div>
+          <ul class="navigation">
+            <li><a class="current" href="#/home">Home</a></li>
+            <li><a class="" href="#/favoritas">Watch list</a></li>
+          </ul>
+        </div>
+        <form class="form-search">
+          <input type="search" class="search" placeholder="Search" />
+          <button id="submit" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+      </nav>
+    </header>
+
+    <!-- Main content -->
+  <main id="main">
+    <section class="carousel-peliculas">
+      <h1>Upcoming movies</h1>
+      <div class="carousel-upcoming"></div>
+      <h1>Popular movies</h1>
+      <div class="carousel-populares"></div>
+      <h1>Top rated movies</h1>
+      <div class="carousel"></div>
+      <h1>Most watched movies</h1>
+      <div class="carousel-trending"></div>
+    </section>
+  </main>
+  <!-- Current movie -->
+  <section class="current-info" >
+    <div class="current-movie">
+    <div class="show-current"></div>
+  </div>
+  <div class="cast">
+    <div class="carousel-cast"></div>
+  </div>
+
+  </section>
+  
+
+  <section class="favoritas">
+    <h1>Watch list</h1>
+    <hr>
+    <div class="listado-favoritas"></div>
+    
+  </section>
+
+  <section class="search-results">
+    <h1>Results</h1>
+    <hr>
+    <div class="resultados"></div>
+    
+    
+  </section>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <div class="logo">
+          <h1>movie guide</h1>
+        </div>
+        <ul class="navigation">
+          <li><a href="#">Terms and conditions</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Help</a></li>
+          <li><p>© 2020, juanlistello.com</p></li>
+        </ul>
+      </footer>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
