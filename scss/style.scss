@@ -1,5 +1,7 @@
 @import 'base';
+@import 'mediaqueries';
 
+// Current open window
 .current-info {
   display: none;
   .current-movie {
@@ -91,27 +93,7 @@
   }
 }
 
-.reviews {
-  margin: 0 auto;
-  color: $nav-color;
-  width: 80%;
-}
-
-// seccion principal imagen presentacion
-#main {
-  & .main-img {
-    margin: 0 auto;
-    max-width: 1600px;
-    min-height: 300px;
-    background-image: url(../img/bg.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
-}
-
-// Secciones de peliculas`
-
+// Cards style
 .card {
   margin: 0rem 0.6rem;
   background-color: $bg-color;
@@ -154,7 +136,7 @@
     bottom: 0;
   }
 }
-
+// cards carousel
 .carousel-peliculas,
 .cast {
   margin-top: 1rem;
@@ -174,6 +156,9 @@
     &::-webkit-scrollbar {
       display: none;
     }
+  }
+  &:last-child {
+    border-right: 50px solid transparent;
   }
 }
 
