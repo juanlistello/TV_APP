@@ -208,6 +208,7 @@ const uiCtrl = (function () {
 
 // Controlador principal de la aplicacion
 const appCtrl = (function () {
+  const carousel = document.querySelectorAll('.carousel-peliculas div');
   const mainContent = document.getElementById('main');
   const favoritas = document.querySelector('.favoritas');
   const current = document.querySelector('.current-info');
@@ -235,10 +236,8 @@ const appCtrl = (function () {
                   resultados.innerHTML = '';
                   data.forEach((element, index) => {
                     uiCtrl.populateHome(data[index], '.resultados');
-                    console.log(data[index]);
                   });
                 } else {
-                  console.log('sin poster');
                 }
               });
             }
@@ -272,7 +271,10 @@ const appCtrl = (function () {
     },
 
     initHome() {
-      // fetch trending
+      // loop for cleaning the UI
+      carousel.forEach((e, i) => (carousel[i].innerHTML = '');
+     
+
       apiCtrl
         .fetchTrending()
         .then((results) => {

@@ -124,6 +124,7 @@
   box-shadow: $shadow;
   transition: all 0.3s ease;
   position: relative;
+  text-align: center;
 
   &:hover {
     transform: scale(1.1);
