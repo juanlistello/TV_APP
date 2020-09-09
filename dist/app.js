@@ -272,8 +272,7 @@ const appCtrl = (function () {
 
     initHome() {
       // loop for cleaning the UI
-      carousel.forEach((e, i) => (carousel[i].innerHTML = '');
-     
+      carousel.forEach((e, i) => (carousel[i].innerHTML = ''));
 
       apiCtrl
         .fetchTrending()
