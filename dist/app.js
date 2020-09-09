@@ -174,8 +174,8 @@ const uiCtrl = (function () {
     <div class="info-2">
       <h3 class="duracion">Runtime: ${data.runtime} minutes</h3>
       <h3 class="release">Release date: ${data.release_date}</h3>
-      <a href="https://www.imdb.com/title/${data.imdb_id}/">IMBD</a>
-      <a class= "netflix" href="https://www.netflix.com/search?q=${data.title}/">NETFLIX</a>   
+      <a target="_blank" rel="noopener noreferrer" href="https://www.imdb.com/title/${data.imdb_id}/">IMBD</a>
+      <a target="_blank" rel="noopener noreferrer" class= "netflix" href="https://www.netflix.com/search?q=${data.title}/">NETFLIX</a>   
       
     </div>
     <div class="info-3"> 
@@ -342,7 +342,7 @@ const appCtrl = (function () {
         current.style.display = 'none';
         searchResults.style.display = 'block';
       } else {
-        console.log('error');
+        console.log('No page found 404');
       }
     },
   };
