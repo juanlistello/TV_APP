@@ -148,7 +148,7 @@ const uiCtrl = (function () {
       name.innerHTML = `${data.name}`;
       name.classList.add('cast-name');
       cast.classList.add('card-cast');
-      cast.style.backgroundImage = `url(http://image.tmdb.org/t/p/w500/${data.profile_path})`;
+      cast.style.backgroundImage = `url(http://image.tmdb.org/t/p/w185/${data.profile_path})`;
       cast.appendChild(name);
       carousel.appendChild(cast);
     },
@@ -214,6 +214,7 @@ const appCtrl = (function () {
   const current = document.querySelector('.current-info');
   const searchResults = document.querySelector('.search-results');
   const resultados = document.querySelector('.resultados');
+  const castResultado = document.querySelector('.carousel-cast');
 
   return {
     searchListener() {
@@ -240,10 +241,7 @@ const appCtrl = (function () {
                   data[index].poster_path !== null &&
                   data[index].profile_path !== null
                 ) {
-                  console.log(data[index]);
                   uiCtrl.populateHome(data[index], '.resultados');
-                } else {
-                  console.log('no hay poster');
                 }
               });
             }
@@ -261,16 +259,19 @@ const appCtrl = (function () {
           // call populate id movie
           uiCtrl.populateMovieSelected(data);
         })
-        .then()
         .catch((err) => console.log(err));
 
       apiCtrl
         .fetchMovieCrew(movieID)
         .then((results) => {
           const dataCast = results.cast;
-
+          castResultado.innerHTML = '';
           dataCast.forEach((element, index) => {
-            uiCtrl.populateCast(dataCast[index], '.carousel-cast');
+            if (dataCast[index].profile_path !== null) {
+              uiCtrl.populateCast(dataCast[index], '.carousel-cast');
+            } else {
+              console.log('no hay foto perfil');
+            }
           });
         })
         .catch((err) => console.log('no se cargo el fetch'));
