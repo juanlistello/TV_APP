@@ -230,14 +230,20 @@ const appCtrl = (function () {
             const data = results;
             uiCtrl.clearInput();
 
-            if (data.length >= 1) {
+            if (data.length < 1) {
+              resultados.innerHTML = '';
+              console.log('no hay resultados');
+            } else {
+              resultados.innerHTML = '';
               data.forEach((element, index) => {
-                if (data[index].poster_path !== null) {
-                  resultados.innerHTML = '';
-                  data.forEach((element, index) => {
-                    uiCtrl.populateHome(data[index], '.resultados');
-                  });
+                if (
+                  data[index].poster_path !== null &&
+                  data[index].profile_path !== null
+                ) {
+                  console.log(data[index]);
+                  uiCtrl.populateHome(data[index], '.resultados');
                 } else {
+                  console.log('no hay poster');
                 }
               });
             }
